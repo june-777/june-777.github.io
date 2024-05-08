@@ -34,3 +34,4 @@ _site
 .editorconfig
 .gitattributes
 .travis.yml
+/docs
