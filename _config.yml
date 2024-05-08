@@ -113,9 +113,9 @@ analytics:
 # Site Author
 # 좌측 프로필 영역
 author:
-  name             : "Kim Jungi (aka Archa)"
+  name             : "Kim Jungi (Arca)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "문제 해결을 즐기는 개발자"
+  bio              : "**문제 해결**을 즐기는 개발자"
   location         : "Republic of Korea"
   email            :
   links:
