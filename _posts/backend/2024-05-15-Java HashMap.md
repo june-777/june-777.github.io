@@ -9,6 +9,7 @@ toc_sticky: true
 ### Hash Table
 `<Key, Value>` 쌍으로 이루어진 데이터를 ***어디에***, ***어떻게*** 저장해야 ***효율적***으로 관리할 수 있을까요?  
 `Key` 값에 대응하는 ***유니크***한 값을 만들고 그 값에 해당하는 위치에 데이터를 저장하면, O(1)만에 데이터에 접근할 수 있을 것입니다. 즉, 해시 테이블은 `<Key, Value>` 값들을 ***가능한 한*** 유일한 위치에 저장하는 공간을 말합니다.
+
 <img src = "https://github.com/june-777/june-777.github.io/assets/68291395/e00f0c4d-52c9-403e-8aee-ed6bddada2e2" width = 30%>
 
 <br>
