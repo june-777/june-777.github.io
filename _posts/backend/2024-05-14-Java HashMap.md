@@ -11,20 +11,20 @@ toc_sticky: true
 `<Key, Value>` 쌍으로 이루어진 데이터를 ***어디에***, ***어떻게*** 저장해야 ***효율적***으로 관리할 수 있을까요?  
 `Key` 값에 대응하는 ***유니크***한 값을 만들고 그 값에 해당하는 위치에 데이터를 저장하면, O(1)만에 데이터에 접근할 수 있을 것입니다. 즉, 해시 테이블은 `<Key, Value>` 값들을 ***가능한 한*** 유일한 위치에 저장하는 공간을 말합니다.
 
-<img width=250 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/e00f0c4d-52c9-403e-8aee-ed6bddada2e2">
+<img width=400 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/e00f0c4d-52c9-403e-8aee-ed6bddada2e2">
 
 <br>
 
 ### Hash Function
 핵심은 `Key` 값을 기반으로 만든 ***유니크***한 값이 데이터의 저장 위치를 결정한다는 것입니다. 그리고 유니크한 값을 만드는 방법이 바로 **Hash Function**입니다. 다시 말해, 해시 함수는 **`<Key, Value>` 데이터의 저장 위치를 결정하는 함수**입니다.  
 
-<img width=250 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/09a7f20f-f8b7-47df-a255-cb89f12e4872">
+<img width=400 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/09a7f20f-f8b7-47df-a255-cb89f12e4872">
 
 <br>
 
 첫 번째 예시를 그대로 적용하면 아래와 같이 해시 함수가 적용될 것입니다.  
 
-<img width=250 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/20f2a809-39e4-4cac-92e7-179f45e7468d">
+<img width=400 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/20f2a809-39e4-4cac-92e7-179f45e7468d">
 
 <br>
 
@@ -38,11 +38,10 @@ toc_sticky: true
 <br>
 
 #### compression function
-**압축 함수는 해시 코드 함수로 얻은 해시값을 해시 테이블의 크기에 맞게 압축**해주는 함수입니다. 만약 해시 해시 코드 함수로 얻
-은 해시값이 해시 테이블의 크기 N을 넘어가면, [0, N-1] 범위에 맞게 압축해야 할 것입니다.
+**압축 함수는 해시 코드 함수로 얻은 해시값을 해시 테이블의 크기에 맞게 압축**해주는 함수입니다. 만약 해시 해시 코드 함수로 얻은 해시값이 해시 테이블의 크기 N을 넘어가면, [0, N-1] 범위에 맞게 압축해야 할 것입니다.
 
 
-<img width=300 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/a9b7eec8-6e6c-48ae-98a4-79cbccc4dfdd">
+<img width=500 alt="image" src="https://github.com/june-777/june-777.github.io/assets/68291395/a9b7eec8-6e6c-48ae-98a4-79cbccc4dfdd">
 
 <br>
 
