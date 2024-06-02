@@ -87,15 +87,48 @@ public class SomethingService {
 
 하지만 위에서 언급한 `NotificationService`는 조금 다른 경우이다. **`알림 유형`에 부합하는 `알림 대상자`를 선정하는 것은 알림 기능의 핵심 비즈니스 요구사항**이다. Ludo 스터디 매칭 플랫폼 서비스는 10가지 `알림 유형`이 존재하는데, 그 중 몇 가지를 예시로 살펴보자.  
 
-[`관심 모집공고 알림`에 대한 알림 대상자]  
-`스터디 카테고리 키워드`, `모집 포지션 키워드`, `모집 기술스택 키워드` 각각 최소 하나씩 모두 일치하는 사용자
-
 [`상호 리뷰완료 알림`에 대한 알림 대상자]  
 동일한 스터디에서 서로에게 리뷰를 진행한 두 사용자
 
-이처럼 각 알림 유형의 알림 대상자에 대한 요구사항이 모두 다르다. 이는 알림 기능의 핵심 비즈니스 요구사항이며, 알림 유형에 부합하는 알림 대상자 조회가 올바르게 수행되는지 테스트할 필요가 있다.
+[`관심 모집공고 알림`에 대한 알림 대상자]  
+`스터디 카테고리 키워드`, `모집 포지션 키워드`, `모집 기술스택 키워드` 각각 최소 하나씩 모두 일치하는 사용자
 
-정리하면 조회 로직은 경우에 따라 `Stubbing` 처리할 수 있지만, **조회 로직 자체가 핵심 비즈니스 요구사항에 포함되면 어떠한 방식으로든 조회 로직을 테스트** 해야한다.
+`관심 모집공고 알림`유형에 대한 알림 대상자 조회로직은 다음과 같다. 딱봐도 복잡해보인다.
+
+```java
+@Repository
+@RequiredArgsConstructor
+public class UserRepositoryImpl {
+
+	private final JPAQueryFactory q;
+
+	public List<User> findRecruitmentNotifiers(final RecruitmentNotifierCondition condition) {
+		return q.select(user)
+				.from(user)
+				.where(
+						user.id.in(
+								select(notificationKeywordCategory.user.id)
+										.from(notificationKeywordCategory)
+										.where(notificationKeywordCategory.category.eq(condition.category()))))
+				.where(
+						user.id.in(
+								select(notificationKeywordPosition.user.id)
+										.from(notificationKeywordPosition)
+										.where(positionsOrCondition(condition.positions()))))
+				.where(
+						user.id.in(
+								select(notificationKeywordStack.user.id)
+										.from(notificationKeywordStack)
+										.where(stacksOrCondition(condition.stacks()))))
+				.fetch();
+
+	}
+}
+```
+
+이처럼 각 알림 유형에 대한 알림 대상자가 모두 다르며, 적절한 알림 대상자를 선정하는 것은 알림 기능의 핵심 비즈니스 요구사항이다. 또한 조회로직 또한 복잡하다. 즉, 알림 유형에 부합하는 알림 대상자 조회가 올바르게 수행되는지 테스트할 필요가 있다.
+
+정리하면 조회 로직은 경우에 따라 `Stubbing` 처리할 수 있지만, **조회 로직 자체가 핵심 비즈니스 요구사항에 포함되거나, 조회성 쿼리가 복잡하다면 어떠한 방식으로든 조회 로직을 테스트** 해야한다.
 
 <br><br>
 
