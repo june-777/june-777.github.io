@@ -118,14 +118,14 @@ public class NotificationQueryService {
 
 **before**
 
-<img width=600, src="https://github.com/june-777/june-777.github.io/assets/68291395/25d40a97-582e-4676-bed7-b4bbd3091b37">
+<img width=600 src="https://github.com/june-777/june-777.github.io/assets/68291395/25d40a97-582e-4676-bed7-b4bbd3091b37">
 
 
 <br><br>
 
 **after**
 
-<img width=600, src="https://github.com/june-777/june-777.github.io/assets/68291395/ef267bf4-47ee-4b58-81d8-24cdb712ffd6">
+<img width=600 src="https://github.com/june-777/june-777.github.io/assets/68291395/ef267bf4-47ee-4b58-81d8-24cdb712ffd6">
 
 
 <br><br>
