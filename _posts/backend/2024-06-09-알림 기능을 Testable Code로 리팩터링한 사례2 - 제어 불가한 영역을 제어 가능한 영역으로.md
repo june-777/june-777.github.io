@@ -156,7 +156,7 @@ void studyEndDateInRangeTest() {
 			);
 
 	Participant ownerOfStudy1 = Participant.from(study1, user1, backend, OWNER);
-	Participant memberOfStudy1 = Participant.from(study1, user1, backend, MEMBER);
+	Participant memberOfStudy1 = Participant.from(study1, user3, backend, MEMBER);
 	Participant ownerOfStudy2 = Participant.from(study2, user2, backend, OWNER);
 
 	List<Participant> studyEndDateNotifier = notificationQueryService.findStudyEndDateNotifier();
