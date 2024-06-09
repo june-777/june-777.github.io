@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "알림 기능을 Testable Code로 리팩터링"
+title:  "알림 기능을 Testable Code로 리팩터링한 사례1 - 클래스 분리"
 toc: true
 toc_sticky: true
 ---
