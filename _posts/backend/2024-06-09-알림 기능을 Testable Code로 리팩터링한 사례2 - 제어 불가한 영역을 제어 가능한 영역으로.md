@@ -146,7 +146,7 @@ void studyEndDateInRangeTest() {
 	Study study1 = StudyFixture.STUDY1(
 			user1, fixedDateTime,
 			LocalDateTime.of(fixedDateTime.getYear(), fixedDateTime.getMonth(),
-					fixedDateTime.getDayOfMonth() + 5, 10, 0, 0, 0)
+					fixedDateTime.getDayOfMonth() + 0, 0, 0, 0, 0)
 			);
 	Study study2 = StudyFixture.STUDY2(
 			user2,
